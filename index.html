@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Encriptador de Palabras</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Encriptador de Palabras</h1>
+	<label for="palabra">Ingresa una palabra:</label>
+	<input type="text" id="palabra">
+	<button onclick="encriptar()">Encriptar</button>
+	<p id="resultado"></p>
+	<script>
+		function encriptar() {
+			var palabra = document.getElementById("palabra").value;
+			palabra = palabra.toLowerCase(); // Convertimos la palabra a minúsculas
+			var resultado = "";
+			for (var i = 0; i < palabra.length; i++) {
+				var letra = palabra.charAt(i);
+				switch (letra) {
+					case 'e':
+						resultado += "enter";
+						break;
+					case 'i':
+						resultado += "imes";
+						break;
+					case 'a':
+						resultado += "ai";
+						break;
+					case 'o':
+						resultado += "ober";
+						break;
+					case 'u':
+						resultado += "ufat";
+						break;
+					default:
+						resultado += letra;
+				}
+			}
+			document.getElementById("resultado").innerHTML = resultado;
+		}
+	</script>
+</body>
+</html>
